@@ -1,0 +1,15 @@
+{
+  "name": "Quickmarks",
+  "version": "1.0",
+  "description": "A extension to open bookmark quickyly, with shortcut key",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "popup": "popup.html"
+  },
+  "omnibox": {"keyword", "b"},
+  "permissions": [
+    "bookmarks",
+    "tabs",
+    "http://api.flickr.com/"
+  ]
+}
