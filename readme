@@ -1,0 +1,2 @@
+A extension to open bookmark with keyword in omnibox like what you did in Firefox. Simply type 'b {keyword}' to open the bookmark in current tab.     Fully compatible with SiteLauncher's keyword. To set keyword, append [{keyword}] your bookmark title. For example, change 'Facebook' to 'Facebook [b]' will assign      keyword b to Facebook. Just type 'b f' in omnibox to open Facebook. Option page to configure keyword for bookmarks coming soon. Please be patient and enjoy. NOTE:
+it does not work with bookmarklet due to security permission
