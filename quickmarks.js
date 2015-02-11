@@ -52,10 +52,25 @@ qm.searchBookmark = function (regex, text, maxsize, callback) {
 };
 
 qm.openUrl = function (url) {
-  chrome.tabs.getSelected(null, function (tab){
-    if (tab != null) {
-      chrome.tabs.update(tab.id, {url: url, selected: true});
+  chrome.tabs.getSelected(null, function (tab) {
+    if (tab == null) {
+      return chrome.tabs.create({url: url});
+    }
+
+    if (tab.url != "chrome://newtab/") {
+
+      // Remove the tab then duplicate it so focus is blurred from
+      // the omnibox.
+      //
+      // We duplicate the tab instead of creating a new one because
+      // this will preserve the tab's history.
+      chrome.tabs.remove(tab.id, function() {
+        chrome.tabs.duplicate(tab.id, function(duplicatedTab) {
+          chrome.tabs.update(duplicatedTab.id, {url: url, selected: true});
+        });
+      });
     } else {
+      chrome.tabs.remove(tab.id);
       chrome.tabs.create({url: url});
     }
   });
