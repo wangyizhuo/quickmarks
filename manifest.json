@@ -1,6 +1,6 @@
 {
   "name": "Quickmarks",
-  "version": "0.9",
+  "version": "0.91",
   "manifest_version": 2,
   "description": "Simply type 'b {keyword}' in omnibox to open bookmark in current tab.", 
   "icons": { "16": "icon16.png",
